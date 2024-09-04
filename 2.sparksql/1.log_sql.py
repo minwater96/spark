@@ -39,8 +39,8 @@ df.createOrReplaceTempView('log') #=> table name 설정
 # ''').show()
 
 # status code 별 count
-spark.sql('''
-    SELECT status, count(*)
-    FROM log
-    GROUP BY status
-''').show()
+# spark.sql('''
+#     SELECT status, count(*)
+#     FROM log
+#     GROUP BY status
+# ''').show()
