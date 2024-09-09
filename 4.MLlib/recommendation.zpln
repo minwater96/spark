@@ -1,0 +1,842 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\n\nbase \u003d \u0027file:///Users/kimminsu/dmf/dataset/netflix\u0027",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:42:59.255",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725850312172_1709786980",
+      "id": "paragraph_1725850312172_1709786980",
+      "dateCreated": "2024-09-09 11:51:52.172",
+      "dateStarted": "2024-09-09 13:42:59.307",
+      "dateFinished": "2024-09-09 13:43:23.759",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n\nmovie_data \u003d spark.read.csv(base+\u0027/movie.csv\u0027, header\u003dTrue, inferSchema\u003dTrue)\nmovie_data.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:43:35.914",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----+--------------------+\n|Movie_ID|Year|                Name|\n+--------+----+--------------------+\n|       1|2003|     Dinosaur Planet|\n|       2|2004|Isle of Man TT 20...|\n|       3|1997|           Character|\n|       4|1994|Paula Abdul\u0027s Get...|\n|       5|2004|The Rise and Fall...|\n|       6|1997|                Sick|\n|       7|1992|               8 Man|\n|       8|2004|What the #$*! Do ...|\n|       9|1991|Class of Nuke \u0027Em...|\n|      10|2001|             Fighter|\n|      11|1999|Full Frame: Docum...|\n|      12|1947|My Favorite Brunette|\n|      13|2003|Lord of the Rings...|\n|      14|1982|  Nature: Antarctica|\n|      15|1988|Neil Diamond: Gre...|\n|      16|1996|           Screamers|\n|      17|2005|           7 Seconds|\n|      18|1994|    Immortal Beloved|\n|      19|2000|By Dawn\u0027s Early L...|\n|      20|1972|     Seeta Aur Geeta|\n+--------+----+--------------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d0"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d1"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d2"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725851120924_1851533553",
+      "id": "paragraph_1725851120924_1851533553",
+      "dateCreated": "2024-09-09 12:05:20.950",
+      "dateStarted": "2024-09-09 13:43:36.079",
+      "dateFinished": "2024-09-09 13:43:45.763",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nrating_data \u003d spark.read.csv(base+\u0027/rating.csv\u0027, header\u003dTrue, inferSchema\u003dTrue)\nrating_data.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:44:36.098",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------+--------+\n|User_ID|Rating|Movie_ID|\n+-------+------+--------+\n| 712664|     5|       3|\n|1331154|     4|       3|\n|2632461|     3|       3|\n|  44937|     5|       3|\n| 656399|     4|       3|\n| 439011|     1|       3|\n|1644750|     3|       3|\n|2031561|     4|       3|\n| 616720|     4|       3|\n|2467008|     4|       3|\n| 701730|     2|       3|\n|1614320|     4|       3|\n| 115498|     3|       3|\n| 931626|     2|       3|\n| 699878|     4|       3|\n|1694958|     3|       3|\n|  66414|     5|       3|\n|2519847|     5|       3|\n| 948069|     3|       3|\n|  67315|     4|       3|\n+-------+------+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d3"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d5"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725851339299_843939084",
+      "id": "paragraph_1725851339299_843939084",
+      "dateCreated": "2024-09-09 12:08:59.304",
+      "dateStarted": "2024-09-09 13:44:36.126",
+      "dateFinished": "2024-09-09 13:44:46.750",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nrating_data.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:44:43.615",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- User_ID: integer (nullable \u003d true)\n |-- Rating: integer (nullable \u003d true)\n |-- Movie_ID: integer (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725851403469_695579393",
+      "id": "paragraph_1725851403469_695579393",
+      "dateCreated": "2024-09-09 12:10:03.475",
+      "dateStarted": "2024-09-09 13:44:43.694",
+      "dateFinished": "2024-09-09 13:44:46.813",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nmovie_data.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:44:45.123",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Movie_ID: integer (nullable \u003d true)\n |-- Year: integer (nullable \u003d true)\n |-- Name: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725851455019_569037538",
+      "id": "paragraph_1725851455019_569037538",
+      "dateCreated": "2024-09-09 12:10:55.023",
+      "dateStarted": "2024-09-09 13:44:46.887",
+      "dateFinished": "2024-09-09 13:44:46.941",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.ml.recommendation import ALS\n\nals \u003d ALS(userCol\u003d\u0027User_ID\u0027, itemCol\u003d\u0027Movie_ID\u0027, ratingCol\u003d\u0027Rating\u0027, coldStartStrategy\u003d\u0027drop\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:45:00.714",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725851465989_2127676977",
+      "id": "paragraph_1725851465989_2127676977",
+      "dateCreated": "2024-09-09 12:11:06.000",
+      "dateStarted": "2024-09-09 13:45:00.754",
+      "dateFinished": "2024-09-09 13:45:01.242",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n\ntrain_data, test_data \u003d rating_data.randomSplit([0.8, 0.2])",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:45:02.056",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725851987289_1802460072",
+      "id": "paragraph_1725851987289_1802460072",
+      "dateCreated": "2024-09-09 12:19:47.310",
+      "dateStarted": "2024-09-09 13:45:02.080",
+      "dateFinished": "2024-09-09 13:45:02.127",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:45:03.666",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725856751674_1718543955",
+      "id": "paragraph_1725856751674_1718543955",
+      "dateCreated": "2024-09-09 13:39:11.675",
+      "dateStarted": "2024-09-09 13:45:03.685",
+      "dateFinished": "2024-09-09 13:45:03.720",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nals_model \u003d als.fit(train_data)",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:45:05.872",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d6"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d7"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d8"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d9"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d10"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725856629405_886497327",
+      "id": "paragraph_1725856629405_886497327",
+      "dateCreated": "2024-09-09 13:37:09.417",
+      "dateStarted": "2024-09-09 13:45:05.900",
+      "dateFinished": "2024-09-09 13:46:09.433",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nprediction \u003d als_model.transform(test_data)\nprediction.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:45:09.449",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------+--------+----------+\n|User_ID|Rating|Movie_ID|prediction|\n+-------+------+--------+----------+\n| 128389|     1|     148|  2.577601|\n| 227152|     1|     148| 2.0311804|\n| 263031|     5|     148| 3.8834271|\n| 360754|     4|     148| 3.6727273|\n| 556576|     4|     148| 2.7184474|\n| 622867|     4|     148| 3.1891854|\n| 929895|     2|     148| 2.0987375|\n|1005439|     3|     148| 3.0060766|\n|1025592|     1|     148| 3.2486873|\n|1220482|     4|     148| 3.3713083|\n|1353371|     3|     148| 3.6189308|\n|1394426|     4|     148|  3.968649|\n|1604716|     4|     148|   4.13067|\n|1717002|     4|     148| 3.6270466|\n|1726869|     4|     148| 2.9288776|\n|2149005|     2|     148| 2.9170394|\n|2279934|     4|     148| 3.2342052|\n|2311863|     3|     148| 3.1059976|\n|2337017|     3|     148| 2.8863559|\n|  36655|     3|     148| 2.7616317|\n+-------+------+--------+----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d11"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725856642261_1727822856",
+      "id": "paragraph_1725856642261_1727822856",
+      "dateCreated": "2024-09-09 13:37:22.263",
+      "dateStarted": "2024-09-09 13:45:09.480",
+      "dateFinished": "2024-09-09 13:46:38.381",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nprediction.orderBy(\u0027prediction\u0027, ascending\u003dTrue).show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:46:48.731",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------+--------+-----------+\n|User_ID|Rating|Movie_ID| prediction|\n+-------+------+--------+-----------+\n| 363550|     1|    1126|-0.23944348|\n| 512127|     1|    2762| 0.23325998|\n|  45835|     1|    1145| 0.25904158|\n|1449718|     1|    1145|  0.2978209|\n|1486829|     1|    3565| 0.30386806|\n| 363550|     1|    3714|  0.3476642|\n|2228109|     1|    3573| 0.40335846|\n|2092369|     1|    2388| 0.40602633|\n|1872113|     1|    3573| 0.40680528|\n|2439493|     1|    4355| 0.42605007|\n|2040859|     1|     248| 0.44223222|\n|2541025|     1|      77| 0.44816008|\n| 806105|     1|    1877| 0.49787688|\n|2449531|     1|    1145|  0.5000202|\n|1903324|     1|     398|  0.5082046|\n|1903324|     1|     554|  0.5142025|\n|2448201|     1|     977|  0.5164267|\n|1146000|     1|    3505| 0.52935255|\n|2305400|     1|    2986| 0.53143835|\n| 521386|     1|    1145|   0.532457|\n+-------+------+--------+-----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d12"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725857109477_2040678937",
+      "id": "paragraph_1725857109477_2040678937",
+      "dateCreated": "2024-09-09 13:45:09.983",
+      "dateStarted": "2024-09-09 13:46:48.754",
+      "dateFinished": "2024-09-09 13:47:19.390",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nprediction.orderBy(\u0027prediction\u0027, ascending\u003dFalse).show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:47:29.454",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------+--------+----------+\n|User_ID|Rating|Movie_ID|prediction|\n+-------+------+--------+----------+\n|1951535|     5|    3962| 5.8559384|\n|2517727|     5|    4238| 5.8399014|\n|2164954|     5|    2452|  5.813697|\n|2509495|     5|    2452| 5.7988825|\n| 525924|     5|    3962| 5.7974806|\n|  45365|     5|    2452| 5.7907486|\n| 228261|     5|    3456|  5.783794|\n|1664010|     5|    1476|  5.783062|\n|1951535|     5|    4306| 5.7752786|\n| 182462|     5|    2162|  5.767699|\n|1745577|     5|    3962| 5.7660646|\n|1379159|     5|    4306| 5.7604218|\n| 794999|     5|    2862|  5.756829|\n| 642384|     5|    2862| 5.7562733|\n|2232065|     5|    2162|  5.753731|\n|2322298|     5|    2162| 5.7354693|\n| 515610|     5|    4238|  5.733666|\n| 416976|     5|    2452| 5.7300653|\n|1745577|     5|    3444|  5.725891|\n|2111039|     5|    2102| 5.7248087|\n+-------+------+--------+----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d13"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725857208749_1085014689",
+      "id": "paragraph_1725857208749_1085014689",
+      "dateCreated": "2024-09-09 13:46:48.754",
+      "dateStarted": "2024-09-09 13:47:29.480",
+      "dateFinished": "2024-09-09 13:47:57.173",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nuser_review_count \u003d rating_data.groupBy(\u0027User_ID\u0027).count()\nuser_review_count.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:50:22.243",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----+\n|User_ID|count|\n+-------+-----+\n|2427438|   68|\n|2496050|  217|\n|1377693|  218|\n|2190625|  298|\n|1560852|   68|\n|1608536|   52|\n|1081461|  112|\n| 160563|  110|\n|2229935|  132|\n|  99239|  142|\n|1247265|   70|\n|1001129|  651|\n| 796682|  255|\n|1896167|  194|\n|2643581|   52|\n|2474053|  180|\n|1703879|  400|\n| 689978|  102|\n| 284829|   71|\n|2358799|  225|\n+-------+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d14"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725857249474_832192259",
+      "id": "paragraph_1725857249474_832192259",
+      "dateCreated": "2024-09-09 13:47:29.480",
+      "dateStarted": "2024-09-09 13:50:22.279",
+      "dateFinished": "2024-09-09 13:50:32.312",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\ntop_5_users \u003d user_review_count.orderBy(\u0027count\u0027, ascending\u003dFalse).limit(5)\ntop_5_users.show()",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:53:08.180",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----+\n|User_ID|count|\n+-------+-----+\n| 305344| 1344|\n| 387418| 1339|\n|2439493| 1324|\n|2118461| 1305|\n|1664010| 1257|\n+-------+-----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d15"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725857422275_513065217",
+      "id": "paragraph_1725857422275_513065217",
+      "dateCreated": "2024-09-09 13:50:22.279",
+      "dateStarted": "2024-09-09 13:53:08.237",
+      "dateFinished": "2024-09-09 13:53:17.977",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nusers \u003d top_5_users.select(\u0027User_ID\u0027)\nrecommend \u003d als_model.recommendForUserSubset(users, 5)\nrecommend.show(truncate\u003dFalse)\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 13:57:43.593",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----------------------------------------------------------------------------------------------+\n|User_ID|recommendations                                                                               |\n+-------+----------------------------------------------------------------------------------------------+\n|305344 |[{3290, 2.9310167}, {3798, 2.9224524}, {3269, 2.920891}, {2862, 2.9184387}, {1692, 2.9178946}]|\n|1664010|[{3456, 5.9825983}, {1476, 5.783062}, {3962, 5.7334204}, {2102, 5.694911}, {4238, 5.679292}]  |\n|387418 |[{3638, 2.8107052}, {1962, 2.7950969}, {1561, 2.7855675}, {1509, 2.7726738}, {1073, 2.730232}]|\n|2118461|[{3456, 5.368881}, {2162, 5.226361}, {3962, 5.173696}, {4238, 5.167966}, {2568, 5.102966}]    |\n|2439493|[{32, 2.153459}, {3239, 2.0821927}, {1222, 2.0356336}, {476, 2.0309772}, {4168, 2.0225258}]   |\n+-------+----------------------------------------------------------------------------------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d17"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d18"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d19"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d20"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d21"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725857588226_581150677",
+      "id": "paragraph_1725857588226_581150677",
+      "dateCreated": "2024-09-09 13:53:08.237",
+      "dateStarted": "2024-09-09 13:57:43.634",
+      "dateFinished": "2024-09-09 13:58:04.324",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.functions import avg\n\nuser_ids \u003d [\u0027305344\u0027, \u00271664010\u0027, \u0027387418\u0027, \u00272118461\u0027, \u00272439493\u0027]\ntop_5_reviews \u003d rating_data.filter(rating_data[\u0027User_ID\u0027].isin(user_ids))\ntop_5_reviews.groupBy(\u0027User_ID\u0027).agg(avg(\u0027Rating\u0027)).show()\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 14:06:44.735",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------------------+\n|User_ID|       avg(Rating)|\n+-------+------------------+\n| 305344|2.2388392857142856|\n|1664010| 4.894988066825776|\n| 387418|2.1344286781179984|\n|2118461| 4.344061302681992|\n|2439493|1.4244712990936557|\n+-------+------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d22"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d23"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d24"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d25"
+            },
+            {
+              "jobUrl": "http://192.168.0.47:4043/jobs/job?id\u003d26"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725857666920_1119575477",
+      "id": "paragraph_1725857666920_1119575477",
+      "dateCreated": "2024-09-09 13:54:26.926",
+      "dateStarted": "2024-09-09 14:06:44.762",
+      "dateFinished": "2024-09-09 14:06:57.507",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-09-09 14:04:40.913",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1725858280891_1964741684",
+      "id": "paragraph_1725858280891_1964741684",
+      "dateCreated": "2024-09-09 14:04:40.912",
+      "status": "READY"
+    }
+  ],
+  "name": "recommendation",
+  "id": "2K6J6YX4Y",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
